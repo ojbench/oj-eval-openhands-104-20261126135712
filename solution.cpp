@@ -15,17 +15,19 @@ struct Point {
 };
 
 int main() {
-    scanf("%d %d", &n, &m);
+    if (scanf("%d %d", &n, &m) != 2) return 1;
     
-    int sr, sc; // start position (value 2)
-    int tr, tc; // home position (value 3)
+    int sr = 0, sc = 0; // start position (value 2)
+    int tr = 0, tc = 0; // home position (value 3)
     
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            scanf("%d", &grid[i][j]);
-            if (grid[i][j] == 2) {
+            int val;
+            if (scanf("%d", &val) != 1) return 1;
+            grid[i][j] = val;
+            if (val == 2) {
                 sr = i; sc = j;
-            } else if (grid[i][j] == 3) {
+            } else if (val == 3) {
                 tr = i; tc = j;
             }
         }
