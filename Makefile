@@ -1,10 +1,10 @@
-CXX = g++
-CXXFLAGS = -O2 -std=c++17
+CC = gcc
+CFLAGS = -O2 -std=c11
 
 all: code
 
-code: solution.cpp
-	$(CXX) $(CXXFLAGS) -o code solution.cpp
+code: solution.c
+	$(CC) $(CFLAGS) -o code solution.c
 
 clean:
 	rm -f code
